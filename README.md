@@ -1,9 +1,6 @@
 # Angular Universal Starter
 
-![Angular Universal](https://angular.io/assets/images/logos/concept-icons/universal.png)
-
-A minimal Angular & [Nest](https://github.com/nestjs/nest) starter for Universal using the [Angular CLI](https://github.com/angular/angular-cli)
-If you're looking for the Angular Universal repo go to [**angular/universal**](https://github.com/angular/universal)  
+A minimal Angular & [**Nest**](https://github.com/nestjs/nest) starter for Universal using the [Angular CLI](https://github.com/angular/angular-cli). If you're looking for the Angular Universal repo go to [angular/universal](https://github.com/angular/universal).
 
 ## Getting Started
 
