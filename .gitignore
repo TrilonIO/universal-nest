@@ -2,8 +2,6 @@
 .DS_Store
 .vscode
 
-package-lock.json
-
 # Built #
 /__build__/
 /__server_build__/

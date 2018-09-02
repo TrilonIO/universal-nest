@@ -9,12 +9,25 @@ import { Speaker } from '../../../interfaces/speakers.interface';
     <h3>Speakers</h3>
     <ul>
       <li *ngFor="let speaker of speakers | async">
-        <img [src]="speaker.image"> {{ speaker.name }}<br>
-        {{ speaker.talk }}
+        <img [src]="speaker.image"> <span>{{ speaker.name }} - {{ speaker.talk }}</span>
       </li>
     </ul>
   `,
-  styles: []
+  styles: [`
+    ul {
+      margin: 16px;
+    }
+    li {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      list-style-type: none;
+      margin-bottom: 8px;
+    }
+    span {
+      margin-left: 8px;
+    }
+  `]
 })
 export class SpeakersListComponent implements OnInit {
 

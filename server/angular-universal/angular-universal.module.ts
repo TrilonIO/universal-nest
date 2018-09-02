@@ -1,17 +1,10 @@
 import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 
-import * as express from 'express';
-import {
-  Module,
-  Inject,
-  MiddlewareConsumer,
-  RequestMethod,
-} from '@nestjs/common';
+import { Module, Inject, MiddlewareConsumer } from '@nestjs/common';
 import { DynamicModule, NestModule } from '@nestjs/common/interfaces';
 import { readFileSync } from 'fs';
 
-import { applyDomino } from './utils/domino.utils';
 import { AngularUniversalOptions } from './interfaces/angular-universal-options.interface';
 import { ANGULAR_UNIVERSAL_OPTIONS } from './angular-universal.constants';
 import { AngularUniversalController } from './angular-universal.controller';
@@ -49,9 +42,5 @@ export class AngularUniversalModule implements NestModule {
     };
   }
 
-  configure(consumer: MiddlewareConsumer): void {
-    consumer
-      .apply(express.static(this.ngOptions.viewsPath))
-      .forRoutes('*.*');
-  }
+  configure(consumer: MiddlewareConsumer): void {}
 }

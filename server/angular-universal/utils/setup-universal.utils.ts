@@ -1,6 +1,6 @@
 import { renderModuleFactory } from '@angular/platform-server';
-import { AngularUniversalOptions } from '../interfaces/angular-universal-options.interface';
-import { join } from 'path';
+import { AngularUniversalOptions } from '..';
+import * as express from 'express';
 
 export function setupUniversal(
   app,
@@ -28,4 +28,8 @@ export function setupUniversal(
   });
   app.set('view engine', 'html');
   app.set('views', ngOptions.viewsPath);
+  // Serve static files
+  app.get('*.*', express.static(ngOptions.viewsPath, {
+    maxAge: 600
+  }));
 }

@@ -11,7 +11,7 @@ export const angularUniversalProviders: Provider[] = [
     useFactory: (
       httpServerRef: ExpressAdapter,
       options: AngularUniversalOptions & { template: string },
-    ) => setupUniversal(httpServerRef.getHttpServer(), options),
+    ) => setupUniversal(httpServerRef.getInstance(), options),
     inject: [HTTP_SERVER_REF, ANGULAR_UNIVERSAL_OPTIONS],
   },
 ];

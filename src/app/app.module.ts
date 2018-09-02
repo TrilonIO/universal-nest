@@ -22,7 +22,7 @@ export function getWindow() {
   ],
   imports: [
     HttpClientModule,
-    DragulaModule,
+    DragulaModule.forRoot(),
     // Add .withServerTransition() to support Universal rendering.
     // The application ID can be any identifier which is unique on
     // the page.
