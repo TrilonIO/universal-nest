@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { join } from 'path';
-import { AngularUniversalModule, applyDomino } from './angular-universal';
+import { AngularUniversalModule, applyDomino } from '@nestjs/ng-universal';
 import { AppController } from './app.controller';
 
 const BROWSER_DIR = join(process.cwd(), 'dist/browser');
