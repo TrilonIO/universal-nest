@@ -1,4 +1,4 @@
-# NestJS + Angular Universal Starter
+# Nest + Angular Universal Starter
 
 A minimal [**Nest**](https://github.com/nestjs/nest) and Angular starter for Universal using the 
 [Angular CLI](https://github.com/angular/angular-cli). If you're looking for the Angular Universal repo go to 
@@ -35,7 +35,7 @@ This repo demonstrates the use of 2 different forms of Server Side Rendering.
 
 ### Production (also for testing SSR/Pre-rendering locally)
 *`npm run build:ssr && npm run serve:ssr`
-  - Compiles your application and spins up a Node Express to serve
+  - Compiles your application and spins up a Nest server to serve
 your Universal application on `http://localhost:4000`.
 
 *`npm run build:prerender && npm run serve:prerender`
