@@ -6,7 +6,7 @@ const WebpackConfigFactory = require('@nestjs/ng-universal')
  * In fact, passing following configuration to the WebpackConfigFactory is not required
  * default options object returned from this method has equivalent entries defined by default.
  *
- * Example: WebpackConfigFactory.create();
+ * Example: WebpackConfigFactory.create(webpack);
  */
 module.exports = WebpackConfigFactory.create(webpack, {
   // This is our Nest server for Dynamic universal
