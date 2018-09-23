@@ -6,7 +6,7 @@ const webpack = require('webpack');
 module.exports = {
   mode: 'none',
   entry: {
-    // This is our Express server for Dynamic universal
+    // This is our Nest server for Dynamic universal
     server: './server/main.ts',
     // This is an example of Static prerendering (generative)
     prerender: './prerender.ts',
