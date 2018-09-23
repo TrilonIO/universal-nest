@@ -9,7 +9,7 @@ module.exports = {
     // This is our Express server for Dynamic universal
     server: './server/main.ts',
     // This is an example of Static prerendering (generative)
-    prerender: './prerender.ts'
+    prerender: './prerender.ts',
   },
   target: 'node',
   resolve: { extensions: ['.ts', '.js'] },
@@ -18,7 +18,7 @@ module.exports = {
   output: {
     // Puts the output at the root of the dist folder
     path: path.join(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: '[name].js',
   },
   module: {
     rules: [
@@ -29,27 +29,14 @@ module.exports = {
         test: /(\\|\/)@angular(\\|\/)core(\\|\/).+\.js$/,
         parser: { system: true },
       },
-    ]
+    ],
   },
   plugins: [
     new webpack.ContextReplacementPlugin(
       // fixes WARNING Critical dependency: the request of a dependency is an expression
-      /(.+)?angular(\\|\/)core(.+)?/,
+      /((.+)?angular(\\|\/)core(.+)?|express(.+)?|(.+)?nestjs(\\|\/)(.+)?)?/,
       path.join(__dirname, 'src'), // location of your src
-      {} // a map of your routes
+      {}, // a map of your routes
     ),
-    new webpack.ContextReplacementPlugin(
-      // fixes WARNING Critical dependency: the request of a dependency is an expression
-      /(.+)?express(\\|\/)(.+)?/,
-      path.join(__dirname, 'src'),
-      {}
-    ),
-    new webpack.ContextReplacementPlugin(
-      // fixes WARNING Critical dependency: the request of a dependency is an expression
-      /(.+)?nestjs(\\|\/)(.+)?/,
-      path.join(__dirname, 'src'),
-      {}
-    ),
-  ]
-}
-  
+  ],
+};
