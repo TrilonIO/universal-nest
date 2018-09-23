@@ -45,7 +45,7 @@
     "@angular/router": "6.1.8",
     "@nestjs/common": "5.3.7",
     "@nestjs/core": "5.3.7",
-    "@nestjs/ng-universal": "0.0.1",
+    "@nestjs/ng-universal": "0.1.0",
     "@nguniversal/common": "6.1.0",
     "@nguniversal/express-engine": "6.1.0",
     "@nguniversal/module-map-ngfactory-loader": "6.1.0",
