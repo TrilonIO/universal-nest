@@ -3,6 +3,7 @@ import 'reflect-metadata';
 import 'zone.js/dist/zone-node';
 import { enableProdMode } from '@angular/core';
 import { renderModuleFactory } from '@angular/platform-server';
+import { applyDomino } from '@nestjs/ng-universal';
 // Import module map for lazy loading
 import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
@@ -12,16 +13,18 @@ import { ROUTES } from './static.paths';
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
 
+const BROWSER_FOLDER = join(process.cwd(), 'browser');
+
+// Load the index.html file containing references to your application bundle.
+const indexPath = join('browser', 'index.html');
+// Ensure that we mock Window|Document etc
+applyDomino(global, indexPath);
+
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const {
   AppServerModuleNgFactory,
   LAZY_MODULE_MAP,
 } = require('./dist/server/main');
-
-const BROWSER_FOLDER = join(process.cwd(), 'browser');
-
-// Load the index.html file containing references to your application bundle.
-const index = readFileSync(join('browser', 'index.html'), 'utf8');
 
 let previousRender = Promise.resolve();
 
@@ -38,7 +41,7 @@ ROUTES.forEach(route => {
   previousRender = previousRender
     .then(_ =>
       renderModuleFactory(AppServerModuleNgFactory, {
-        document: index,
+        document: readFileSync(indexPath, 'utf8'),
         url: route,
         extraProviders: [provideModuleMap(LAZY_MODULE_MAP)],
       }),

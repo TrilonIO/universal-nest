@@ -10,6 +10,6 @@ export class SpeakersService {
   ) {}
 
   getSpeakers() {
-    return this.http.get<Speaker[]>(`${environment.prerenderUrl}/api/speakers`);
+    return this.http.get<Speaker[]>(`/api/speakers`);
   }
 }
