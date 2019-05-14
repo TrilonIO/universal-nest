@@ -21,6 +21,7 @@
     "ng": "ng",
     "start": "ng serve",
     "start:server": "nodemon",
+    "serve": "node serve-script",
     "build": "ng build",
     "lint": "ng lint nest-nguniversal-demo",
     "build:client-and-server-bundles": "ng build --prod && ng run nest-nguniversal-demo:server:production",
@@ -46,7 +47,7 @@
     "@angular/router": "~7.2.9",
     "@nestjs/common": "^6.0.1",
     "@nestjs/core": "^6.0.1",
-    "@nestjs/ng-universal": "^0.4.2",
+    "@nestjs/ng-universal": "^1.1.1",
     "@nestjs/platform-express": "^6.0.1",
     "@nguniversal/common": "7.1.1",
     "@nguniversal/express-engine": "7.1.1",
@@ -84,13 +85,14 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
     "mini-css-extract-plugin": "^0.5.0",
-    "nodemon": "^1.18.10",
+    "nodemon": "^1.19.0",
     "pre-commit": "1.2.2",
     "protractor": "~5.4.2",
     "reflect-metadata": "0.1.13",
     "ts-loader": "5.3.3",
     "ts-node": "~8.0.3",
     "tslint": "~5.14.0",
-    "typescript": "^3.1.1"
+    "typescript": "^3.1.1",
+    "wait-on": "^3.2.0"
   }
 }
