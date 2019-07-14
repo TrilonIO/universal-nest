@@ -31,7 +31,7 @@ export function getWindow() {
 
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full'},
-      { path: 'speakers', loadChildren: './modules/speakers/speakers.module#SpeakersModule'}
+      { path: 'speakers', loadChildren: () => import('./modules/speakers/speakers.module').then(m => m.SpeakersModule)}
     ]),
     SharedModule
   ],
