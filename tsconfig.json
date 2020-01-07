@@ -3,7 +3,7 @@
   "compilerOptions": {
     "downlevelIteration": true,
     "importHelpers": true,
-    "module": "esnext",
+    "module": "commonjs",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
