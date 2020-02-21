@@ -19,4 +19,3 @@ const moduleFilename = (mainModule && mainModule.filename) || '';
 if (moduleFilename === __filename || moduleFilename.includes('iisnode')) {
   bootstrap().catch(err => console.error(err));
 }
-export * from '../src/main.server';
