@@ -48,7 +48,7 @@
     "@nestjs/platform-express": "^6.11.6",
     "@nguniversal/common": "9.0.0",
     "@nguniversal/express-engine": "9.0.0",
-    "class-transformer": "^0.2.3",
+    "class-transformer": "^0.3.1",
     "class-validator": "^0.9.1",
     "classlist.js": "1.1.20150312",
     "core-js": "^2.6.5",
